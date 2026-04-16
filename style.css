@@ -1,189 +1,389 @@
+/* --- Reset & Base Styles --- */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
 }
 
 body {
-  background: linear-gradient(135deg, #0f172a, #1e293b);
-  color: #fff;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    background: #0f172a;
+    background-image: radial-gradient(circle at top right, #1e293b, #0f172a);
+    color: #f8fafc;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
-/* CONTAINER */
+/* --- Layout Container --- */
 .container {
-  display: flex;
-  max-width: 1000px;
-  width: 90%;
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(15px);
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    display: flex;
+    max-width: 1100px;
+    width: 100%;
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }
 
-/* CARD */
+/* --- Sidebar Section --- */
 .card {
-  background: rgba(255,255,255,0.08);
-  padding: 30px;
-  width: 300px;
-  text-align: center;
-  border-right: 1px solid rgba(255,255,255,0.1);
+    background: rgba(15, 23, 42, 0.5);
+    padding: 40px 30px;
+    width: 320px;
+    text-align: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.profile-wrapper {
+    position: relative;
+    width: 130px;
+    height: 130px;
+    margin: 0 auto 20px;
 }
 
 .profile {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 15px;
-  border: 3px solid #38bdf8;
+    width: 100%;
+    height: 100%;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    object-fit: cover;
+    border: 4px solid #38bdf8;
+    animation: morph 8s ease-in-out infinite;
+}
+
+@keyframes morph {
+    0%, 100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+    50% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
 }
 
 .card h2 {
-  margin-bottom: 5px;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
 }
 
 .role {
-  color: #38bdf8;
-  margin-bottom: 15px;
+    color: #38bdf8;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
 }
 
 .desc {
-  font-size: 14px;
-  opacity: 0.8;
-  margin-bottom: 20px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #94a3b8;
+    margin-bottom: 30px;
 }
 
-/* SOCIAL */
 .social a {
-  display: inline-block;
-  margin: 5px;
-  padding: 8px 14px;
-  border-radius: 20px;
-  background: #38bdf8;
-  color: #000;
-  text-decoration: none;
-  font-size: 13px;
-  transition: 0.3s;
+    display: block;
+    padding: 10px;
+    border-radius: 12px;
+    background: #38bdf8;
+    color: #0f172a;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.85rem;
+    transition: 0.3s;
 }
 
 .social a:hover {
-  background: #0ea5e9;
-  color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px -3px rgba(56, 189, 248, 0.4);
 }
 
-/* CONTENT */
+/* --- Main Content Section --- */
 .content {
-  padding: 40px;
-  flex: 1;
+    padding: 40px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
 }
 
 .content h1 {
-  font-size: 40px;
-  margin-bottom: 10px;
+    font-size: 2.5rem;
+    margin-bottom: 5px;
 }
 
 .subtitle {
-  color: #94a3b8;
-  margin-bottom: 20px;
+    color: #64748b;
 }
 
-/* BUTTONS */
-.buttons {
-  margin-bottom: 25px;
-}
-
+/* --- Buttons --- */
 .btn {
-  padding: 10px 18px;
-  border-radius: 25px;
-  border: none;
-  cursor: pointer;
-  margin-right: 10px;
-  background: transparent;
-  border: 1px solid #38bdf8;
-  color: #38bdf8;
-  transition: 0.3s;
+    padding: 10px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid #38bdf8;
+    color: #38bdf8;
+    background: transparent;
+}
+
+.btn.primary {
+    background: #38bdf8;
+    color: #0f172a;
+    margin-right: 10px;
 }
 
 .btn:hover {
-  background: #38bdf8;
-  color: #000;
+    background: rgba(56, 189, 248, 0.1);
 }
 
-.primary {
-  background: #38bdf8;
-  color: #000;
+.btn.primary:hover {
+    background: #7dd3fc;
+    border-color: #7dd3fc;
 }
 
-.primary:hover {
-  background: #0ea5e9;
-  color: #fff;
+/* --- Projects Grid --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 15px;
 }
 
-/* PROJECT */
 .project {
-  background: rgba(255,255,255,0.05);
-  padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  transition: 0.3s;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 16px;
+    transition: 0.3s;
 }
 
 .project:hover {
-  transform: translateY(-5px);
-  background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.07);
+    border-color: #38bdf8;
+    transform: translateY(-5px);
 }
 
-/* HIDDEN */
-.hidden {
-  display: none;
+.project h4 {
+    margin-bottom: 8px;
+    color: #f1f5f9;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-  }
-
-  .card {
-    width: 100%;
-    border-right: none;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-  }
+.project p {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin-bottom: 12px;
 }
-/* HIGHLIGHT TEXT */
+
 .highlight {
-  font-size: 13px;
-  color: #38bdf8;
-  margin: 8px 0 10px;
-  font-style: italic;
+    font-weight: 500;
+    color: #38bdf8 !important;
+    font-size: 0.8rem !important;
 }
 
-/* PROJECT LINKS */
 .project-links {
-  margin-top: 10px;
+    display: flex;
+    gap: 10px;
 }
 
 .project-links a {
-  display: inline-block;
-  margin-right: 10px;
-  padding: 6px 12px;
-  border-radius: 15px;
-  font-size: 12px;
-  text-decoration: none;
-  background: rgba(56, 189, 248, 0.15);
-  color: #38bdf8;
-  border: 1px solid #38bdf8;
-  transition: 0.3s;
+    flex: 1;
+    text-align: center;
+    padding: 6px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    text-decoration: none;
+    background: rgba(56, 189, 248, 0.1);
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.2);
 }
 
-.project-links a:hover {
-  background: #38bdf8;
-  color: #000;
-  transform: scale(1.05);
+/* --- Responsive Layout --- */
+@media (max-width: 900px) {
+    .container { 
+        flex-direction: column; 
+    }
+    .card { 
+        width: 100%; 
+        border-right: none; 
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+    }
+    .content-header { 
+        flex-direction: column; 
+        gap: 20px; 
+    }
+}
+/* Cari bagian ini di CSS kamu dan ubah align-items nya */
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Diubah dari flex-start ke center agar sejajar lurus */
+    margin-bottom: 30px;
+}
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+/* --- Tambahan/Perubahan untuk Kontak di Sidebar --- */
+
+/* 1. Gabungkan kontak dan profil dalam satu kontainer flex vertikal */
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Jarak antar tombol */
+    margin-top: auto; /* Mendorong kontak ke bagian bawah sidebar jika ada ruang */
+    padding-top: 20px;
+}
+
+/* 2. Gaya tombol kontak agar seragam */
+.contact-section a {
+    display: flex; /* Flexbox horizontal untuk meratakan ikon dan teks */
+    align-items: center; /* Meratakan ikon & teks secara vertikal */
+    justify-content: flex-start; /* Meratakan teks ke kiri */
+    gap: 12px; /* Jarak antara ikon dan teks */
+    padding: 12px 16px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    
+    /* Warna default untuk tombol sekunder */
+    color: #94a3b8;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* 3. Gaya ikon di dalam tombol */
+.contact-section a i {
+    font-size: 1.1rem; /* Sedikit lebih besar dari teks */
+    width: 20px; /* Lebar tetap agar semua teks sejajar lurus */
+    text-align: center; /* Meratakan ikon di tengah lebarnya */
+}
+
+/* 4. Efek Hover */
+.contact-section a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+    background: rgba(56, 189, 248, 0.08); /* Sedikit warna biru di background */
+    border-color: rgba(56, 189, 248, 0.3);
+}
+
+/* --- Hapus atau Ganti bagian ini agar sama dengan yang lain --- */
+
+.contact-section a[title="GitHub"] {
+    background: rgba(255, 255, 255, 0.03); /* Samakan dengan background tombol lain */
+    color: #94a3b8;                         /* Samakan warna teks */
+    border: 1px solid rgba(255, 255, 255, 0.05); /* Samakan border */
+    justify-content: flex-start;           /* Samakan posisi teks ke kiri */
+}
+
+.contact-section a[title="GitHub"] i {
+    color: #94a3b8; /* Samakan warna ikon */
+}
+
+/* Efek Hover juga disamakan */
+.contact-section a[title="GitHub"]:hover {
+    background: rgba(56, 189, 248, 0.08);
+    border-color: rgba(56, 189, 248, 0.3);
+    color: #38bdf8;
+}
+
+.contact-section a[title="GitHub"]:hover i {
+    color: #38bdf8;
+}
+.tech-stack {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    color: #64748b; /* Warna abu-abu soft */
+    font-size: 1.2rem;
+}
+.tech-stack i:hover {
+    color: #38bdf8; /* Berubah biru saat di-hover */
+}
+
+/* --- Tambahan Styles Baru --- */
+
+/* 1. Skill Section di Sidebar */
+.skills-section {
+    margin-top: 25px;
+    text-align: left;
+    padding: 0 5px;
+}
+.skills-section h4 {
+    font-size: 0.8rem;
+    color: #38bdf8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+.skills-container span {
+    background: rgba(56, 189, 248, 0.1);
+    color: #38bdf8;
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 0.7rem;
+    border: 1px solid rgba(56, 189, 248, 0.1);
+}
+
+/* 2. Gambar Project (Kotak Sedang) */
+.project-img {
+    width: 100px; /* Ukuran sedang */
+    height: 100px; 
+    margin: 0 auto 15px auto;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid rgba(56, 189, 248, 0.2);
+    background: #1e293b;
+}
+.project-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 3. Tech Stack Ikon dalam Project */
+.tech-stack {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 15px;
+    color: #64748b;
+    font-size: 1.1rem;
+}
+.tech-stack i:hover {
+    color: #38bdf8;
+    transform: scale(1.2);
+    transition: 0.3s;
+}
+
+/* 4. Menyelaraskan Project Card */
+.project {
+    text-align: center; /* Membuat semua isi card rata tengah */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.project p {
+    flex-grow: 1;
+    margin-bottom: 10px;
 }

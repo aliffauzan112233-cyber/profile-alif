@@ -14,7 +14,7 @@
     <div class="container">
         <aside class="card">
             <div class="profile-wrapper">
-                <img src="img.jpeg" alt="Alif Fauzan" class="profile" />
+                <img src="img/img.png" alt="Alif Fauzan" class="profile" />
             </div>
             <h2>ALIF FAUZAN</h2>
             <p class="role">Web Developer</p>

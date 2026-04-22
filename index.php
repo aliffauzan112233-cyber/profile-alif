@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-
+    
 <body>
 
     <div class="container">
@@ -25,7 +25,7 @@
 
             <div class="contact-section">
                 <a href="https://github.com/aliffauzan112233-cyber" target="_blank" title="GitHub">
-                    <i class="fab fa-github"></i> GitHub Profile
+                    <i class="fab fa-github"></i> GitHub Profile 
                 </a>
                 <a href="https://mail.google.com/mail/?view=cm&to=aliffauzan114@gmail.com&su=Halo&body=Saya%20tertarik"
                     target="_blank" title="Email"> <i class="fas fa-envelope"></i>Email
@@ -44,12 +44,12 @@
                     <span>Git</span>
                     <span>MySQL</span>
                     <span>Database</span>
-                    <span>Crud</span>
+                    <span>PHP</span>
 
                 </div>
             </div>
         </aside>
-
+        
         <main class="content">
             <header class="content-header">
                 <div>

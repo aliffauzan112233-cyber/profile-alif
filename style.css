@@ -1,26 +1,27 @@
-/* --- Root Variables untuk Konsistensi --- */
+/* --- Root Variables Modern --- */
 :root {
-    --bg-main: #0a0f1a;
-    --card-bg: rgba(16, 24, 39, 0.8);
+    --bg-main: #070b14;
+    --card-bg: rgba(15, 23, 42, 0.7);
     --accent-color: #38bdf8;
-    --text-primary: #f1f5f9;
+    --accent-glow: rgba(56, 189, 248, 0.3);
+    --text-primary: #f8fafc;
     --text-secondary: #94a3b8;
-    --border-color: rgba(255, 255, 255, 0.06);
-    --glass-effect: blur(12px);
+    --border-color: rgba(255, 255, 255, 0.08);
+    --glass-effect: blur(16px);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', -apple-system, sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 body {
     background-color: var(--bg-main);
     background-image: 
-        radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.05) 0px, transparent 50%),
-        radial-gradient(at 100% 100%, rgba(56, 189, 248, 0.02) 0px, transparent 50%);
+        radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.1) 0px, transparent 40%),
+        radial-gradient(at 100% 100%, rgba(56, 189, 248, 0.05) 0px, transparent 40%);
     color: var(--text-primary);
     height: 100vh;
     display: flex;
@@ -33,67 +34,77 @@ body {
 .container {
     display: flex;
     width: 95%;
-    max-width: 1200px;
-    height: 90vh;
+    max-width: 1100px;
+    height: 85vh;
     background: var(--card-bg);
     backdrop-filter: var(--glass-effect);
     border: 1px solid var(--border-color);
-    border-radius: 28px;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    border-radius: 30px;
+    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.6);
     overflow: hidden;
 }
 
-/* --- Sidebar (Kiri) --- */
+/* --- Sidebar Modern --- */
 .card {
-    width: 300px;
-    min-width: 300px;
-    background: rgba(0, 0, 0, 0.2);
+    width: 280px;
+    min-width: 280px;
+    background: rgba(0, 0, 0, 0.3);
     border-right: 1px solid var(--border-color);
-    padding: 40px 25px;
+    padding: 40px 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+.profile-wrapper {
+    position: relative;
+    margin-bottom: 25px;
+}
+
 .profile {
-    width: 110px;
-    height: 110px;
-    border-radius: 22px; /* Kotak membulat lebih modern dibanding lingkaran sempurna */
+    width: 120px;
+    height: 120px;
+    border-radius: 28px;
     object-fit: cover;
     border: 2px solid var(--accent-color);
-    box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
-    margin-bottom: 20px;
+    transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: brightness(1.1);
+}
+
+.profile:hover {
+    transform: scale(1.03) rotate(2deg);
+    box-shadow: 0 0 30px var(--accent-glow);
 }
 
 h2 {
-    font-size: 1.2rem;
-    letter-spacing: 2px;
-    font-weight: 700;
-    margin-bottom: 5px;
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+    font-weight: 800;
+    text-transform: uppercase;
 }
 
 .role {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     color: var(--accent-color);
-    font-weight: 500;
+    letter-spacing: 1px;
+    font-weight: 600;
     margin-bottom: 20px;
-    opacity: 0.9;
 }
 
 .desc {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: var(--text-secondary);
-    line-height: 1.6;
+    line-height: 1.7;
     text-align: center;
     margin-bottom: 30px;
 }
 
-/* --- Contact Links --- */
+/* --- Contact & Skills --- */
 .contact-section {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
 }
 
 .contact-section a {
@@ -103,176 +114,245 @@ h2 {
     padding: 10px 15px;
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid transparent;
-    border-radius: 12px;
+    border-radius: 14px;
     color: var(--text-secondary);
     text-decoration: none;
-    font-size: 0.8rem;
-    transition: all 0.3s ease;
+    font-size: 0.75rem;
+    transition: 0.3s ease;
 }
 
 .contact-section a:hover {
-    background: rgba(56, 189, 248, 0.08);
+    background: rgba(56, 189, 248, 0.1);
     border-color: var(--accent-color);
-    color: var(--accent-color);
-    transform: translateX(5px);
+    color: var(--text-primary);
+    transform: translateX(8px);
 }
 
-/* --- Skills Tag --- */
 .skills-section h4 {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
     color: var(--text-secondary);
     margin: 30px 0 15px;
     width: 100%;
-    text-align: left;
 }
 
 .skills-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
+    gap: 8px;
 }
 
 .skills-container span {
-    font-size: 0.7rem;
-    padding: 5px 12px;
-    background: rgba(255, 255, 255, 0.05);
+    font-size: 0.65rem;
+    padding: 6px 12px;
+    background: rgba(56, 189, 248, 0.05);
     border-radius: 8px;
-    color: var(--text-primary);
-    border: 1px solid var(--border-color);
+    color: var(--accent-color);
+    border: 1px solid rgba(56, 189, 248, 0.15);
+    font-weight: 500;
 }
 
-/* --- Main Content (Kanan) --- */
+/* --- Main Content Area --- */
 .content {
     flex: 1;
-    padding: 50px;
+    padding: 50px 40px;
     overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: var(--accent-color) transparent;
 }
 
 .content-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 40px;
+    align-items: flex-end;
+    margin-bottom: 45px;
 }
 
 .content-header h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
+    font-weight: 700;
     margin-bottom: 5px;
 }
 
 .subtitle {
-    font-size: 0.9rem;
     color: var(--text-secondary);
+    font-size: 0.9rem;
 }
 
 .btn.primary {
-    padding: 10px 20px;
+    padding: 12px 24px;
     background: var(--accent-color);
     color: #000;
     text-decoration: none;
-    border-radius: 10px;
-    font-weight: 600;
-    font-size: 0.85rem;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.8rem;
     transition: 0.3s;
-    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
 }
 
 .btn.primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px var(--accent-glow);
 }
 
-/* --- Projects Grid --- */
+/* --- Project Cards Detail --- */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
+    gap: 25px;
 }
 
 .project {
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid var(--border-color);
-    border-radius: 20px;
-    padding: 20px;
-    transition: all 0.4s ease;
+    border-radius: 24px;
+    padding: 24px;
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
     display: flex;
     flex-direction: column;
 }
 
 .project:hover {
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(255, 255, 255, 0.05);
     border-color: rgba(56, 189, 248, 0.3);
-    transform: translateY(-5px);
+    transform: translateY(-8px);
 }
 
 .project-img {
     width: 100%;
-    height: 140px;
-    border-radius: 12px;
+    height: 150px;
+    border-radius: 16px;
     overflow: hidden;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
 }
 
 .project-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: 0.5s;
+    transition: 0.8s;
 }
 
 .project:hover .project-img img {
-    transform: scale(1.05);
+    transform: scale(1.15);
 }
 
 .project h4 {
-    font-size: 1rem;
-    margin-bottom: 10px;
+    font-size: 1.05rem;
+    margin-bottom: 12px;
 }
 
 .project p {
     font-size: 0.8rem;
     color: var(--text-secondary);
-    line-height: 1.5;
-    margin-bottom: 20px;
+    line-height: 1.6;
+    margin-bottom: 25px;
     flex-grow: 1;
 }
 
 .project-links {
     display: flex;
-    gap: 10px;
+    gap: 12px;
 }
 
 .project-links a {
     flex: 1;
     text-align: center;
-    padding: 8px;
-    border-radius: 8px;
+    padding: 10px;
+    border-radius: 10px;
     font-size: 0.75rem;
     text-decoration: none;
+    font-weight: 600;
     border: 1px solid var(--border-color);
     color: var(--text-primary);
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .project-links a:hover {
-    background: var(--accent-color);
+    background: var(--text-primary);
     color: #000;
-    border-color: var(--accent-color);
+    border-color: var(--text-primary);
 }
 
-/* --- Custom Scrollbar --- */
-.content::-webkit-scrollbar { width: 5px; }
-.content::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 10px; }
+/* --- Scrollbar Custom --- */
+.content::-webkit-scrollbar { width: 4px; }
+.content::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.1); border-radius: 10px; }
 .content::-webkit-scrollbar-thumb:hover { background: var(--accent-color); }
 
-/* --- Responsive Layout --- */
+/* --- Mobile Responsiveness --- */
 @media (max-width: 900px) {
-    body { height: auto; overflow: auto; padding: 10px; }
+    body { height: auto; overflow: visible; padding: 20px 10px; }
     .container { flex-direction: column; height: auto; }
     .card { width: 100%; border-right: none; border-bottom: 1px solid var(--border-color); }
-    .content { padding: 30px 20px; }
+    .content { padding: 40px 25px; }
+}
+/* --- Styling Tombol CV Premium --- */
+.btn.primary {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 28px;
+    background: linear-gradient(135deg, var(--accent-color), #0ea5e9);
+    color: #000;
+    text-decoration: none;
+    border-radius: 14px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow: 0 8px 20px rgba(56, 189, 248, 0.3);
+    overflow: hidden; /* Penting untuk efek shimmer */
+}
+
+/* Efek Kilatan Cahaya (Shimmer) */
+.btn.primary::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    transition: all 0.6s;
+}
+
+.btn.primary:hover::before {
+    left: 100%;
+}
+
+.btn.primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(56, 189, 248, 0.5);
+    color: #000;
+}
+
+.btn.primary:active {
+    transform: translateY(-1px);
+}
+
+/* Animasi Ikon */
+.btn.primary i {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.btn.primary:hover i {
+    transform: translateY(2px); /* Ikon panah seolah-olah menunjuk ke bawah saat di-hover */
+}
+
+/* Opsional: Animasi Nadi (Pulse) supaya user melirik ke tombol CV */
+@keyframes pulse-animation {
+    0% { box-shadow: 0 0 0 0px rgba(56, 189, 248, 0.4); }
+    100% { box-shadow: 0 0 0 15px rgba(56, 189, 248, 0); }
+}
+
+.btn.primary {
+    animation: pulse-animation 2s infinite;
 }

@@ -16,7 +16,7 @@
     <div class="container">
         <aside class="card">
             <div class="profile-wrapper">
-                <img src="img/img.png" alt="Alif Fauzan" class="profile" />
+                <img src="img/img5.png" alt="Alif Fauzan" class="profile" />
             </div>
             <h2>ALIF FAUZAN</h2>
             <p class="role">Web Developer</p>
@@ -46,8 +46,6 @@
                     <span>Git</span>
                     <span>MySQL</span>
                     <span>Database</span>
-                    <span>PHP</span>
-
                 </div>
             </div>
 
@@ -61,8 +59,11 @@
                     <p class="subtitle">Here is a brief summary of my projects</p>
                 </div>
                 <div class="buttons">
-                    <a href="cv.pdf" download class="btn primary">Download CV</a>
-                </div>
+    <a href="cv.pdf" download class="btn primary">
+        <i class="fas fa-cloud-download-alt"></i> 
+        <span>Download CV</span>
+    </a>
+</div>
             </header>
 
             <div id="projects" class="projects-grid">

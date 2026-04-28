@@ -264,20 +264,25 @@ p {
 .img-box {
     width: 380px;
     height: 380px;
-    border-radius: 50%;
-    padding: 8px;
+    border-radius: 40px;
+    padding: 10px;
     background: linear-gradient(135deg, var(--accent-color) 0%, rgba(56, 189, 248, 0.05) 100%);
-    box-shadow: 0 0 50px rgba(56, 189, 248, 0.15);
+    box-shadow: 0 20px 50px rgba(56, 189, 248, 0.2);
     position: relative;
-    animation: float 8s ease-in-out infinite;
+    transform: rotate(3deg);
+    transition: var(--transition);
+}
+
+.img-box:hover {
+    transform: rotate(0deg) scale(1.02);
 }
 
 .img-box::before {
     content: '';
     position: absolute;
-    inset: -30px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, transparent 70%);
+    inset: -20px;
+    border-radius: 50px;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, transparent 70%);
     z-index: -1;
 }
 
@@ -285,10 +290,9 @@ p {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 50%;
+    border-radius: 32px;
     background-color: var(--bg-secondary);
-    border: 4px solid var(--bg-main);
-    filter: brightness(1.05);
+    filter: brightness(1.05) contrast(1.05);
 }
 
 @keyframes float {

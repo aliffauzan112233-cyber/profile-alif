@@ -8,14 +8,16 @@
     <!-- SweetAlert2 for nice alerts -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
-        /* Modern Glassmorphism Login */
+        /* Ultra Premium Login */
         :root {
-            --bg-main: #070b14;
-            --accent-color: #38bdf8;
-            --text-primary: #f8fafc;
-            --text-secondary: #94a3b8;
-            --glass-bg: rgba(15, 23, 42, 0.6);
-            --border-color: rgba(255, 255, 255, 0.1);
+            --bg-main: #050505;
+            --accent-primary: #8b5cf6;
+            --accent-secondary: #06b6d4;
+            --text-primary: #ffffff;
+            --text-secondary: #a1a1aa;
+            --glass-bg: rgba(18, 18, 18, 0.7);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         * {
@@ -33,155 +35,179 @@
             justify-content: center;
             align-items: center;
             overflow: hidden;
-            background-image: 
-                radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.15) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(56, 189, 248, 0.1) 0px, transparent 50%);
+            position: relative;
+        }
+
+        /* Premium Ambient Background Glows */
+        body::before, body::after {
+            content: '';
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(120px);
+            z-index: -1;
+            opacity: 0.5;
+            animation: pulseGlow 15s ease-in-out infinite alternate;
+        }
+
+        body::before {
+            top: -10%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: rgba(139, 92, 246, 0.15); /* Violet glow */
+        }
+
+        body::after {
+            bottom: -10%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: rgba(6, 182, 212, 0.1); /* Cyan glow */
+            animation-delay: -5s;
+        }
+
+        @keyframes pulseGlow {
+            0% { transform: scale(1) translate(0, 0); opacity: 0.4; }
+            50% { transform: scale(1.2) translate(50px, 50px); opacity: 0.6; }
+            100% { transform: scale(0.9) translate(-50px, -20px); opacity: 0.4; }
         }
 
         .login-container {
             width: 100%;
-            max-width: 400px;
+            max-width: 420px;
             background: var(--glass-bg);
-            backdrop-filter: blur(20px);
+            backdrop-filter: blur(30px);
             border: 1px solid var(--border-color);
-            border-radius: 24px;
-            padding: 40px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border-radius: 32px;
+            padding: 50px 40px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
             position: relative;
             z-index: 10;
         }
 
         .back-btn {
             position: absolute;
-            top: 20px;
-            left: 20px;
+            top: 25px;
+            left: 25px;
             color: var(--text-secondary);
             text-decoration: none;
             font-size: 0.9rem;
             display: flex;
             align-items: center;
-            gap: 5px;
-            transition: 0.3s;
+            gap: 8px;
+            transition: var(--transition);
         }
 
         .back-btn:hover {
-            color: var(--accent-color);
+            color: var(--text-primary);
+            transform: translateX(-3px);
         }
 
         .header {
             text-align: center;
-            margin-bottom: 30px;
-            margin-top: 10px;
+            margin-bottom: 40px;
+            margin-top: 15px;
         }
 
         .header h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 5px;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            letter-spacing: -1px;
+            background: linear-gradient(to right, #fff, #a1a1aa);
+            background-clip: text;
+            -webkit-background-clip: text;
+            background-clip: transparent;
+            -webkit-text-fill-color: transparent;
         }
 
         .header p {
             color: var(--text-secondary);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             position: relative;
         }
 
         .form-group i {
             position: absolute;
-            left: 15px;
+            left: 18px;
             top: 50%;
             transform: translateY(-50%);
             color: var(--text-secondary);
             font-size: 1.1rem;
+            transition: var(--transition);
         }
 
         .form-control {
             width: 100%;
-            padding: 14px 15px 14px 45px;
-            background: rgba(255, 255, 255, 0.03);
+            padding: 16px 20px 16px 50px;
+            background: rgba(255, 255, 255, 0.02);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
+            border-radius: 16px;
             color: var(--text-primary);
             font-size: 1rem;
             outline: none;
-            transition: 0.3s;
+            transition: var(--transition);
         }
 
         .form-control:focus {
-            border-color: var(--accent-color);
-            background: rgba(56, 189, 248, 0.05);
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+            border-color: var(--accent-primary);
+            background: rgba(139, 92, 246, 0.05);
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.15);
+        }
+        
+        .form-control:focus + i, .form-group:focus-within i {
+            color: var(--accent-primary);
         }
 
         .btn-submit {
             width: 100%;
-            padding: 14px;
-            background: linear-gradient(135deg, var(--accent-color), #0ea5e9);
-            color: #000;
+            padding: 16px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            color: #fff;
             border: none;
-            border-radius: 12px;
-            font-size: 1rem;
+            border-radius: 16px;
+            font-size: 1.05rem;
             font-weight: 700;
             cursor: pointer;
-            transition: 0.3s;
+            transition: var(--transition);
             margin-top: 10px;
-            box-shadow: 0 8px 20px rgba(56, 189, 248, 0.3);
+            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
+            letter-spacing: 0.5px;
         }
 
         .btn-submit:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 25px rgba(56, 189, 248, 0.5);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(139, 92, 246, 0.5);
         }
 
         .toggle-form {
             text-align: center;
-            margin-top: 25px;
-            font-size: 0.9rem;
+            margin-top: 30px;
+            font-size: 0.95rem;
             color: var(--text-secondary);
         }
 
         .toggle-form span {
-            color: var(--accent-color);
+            background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+            background-clip: text;
+            -webkit-background-clip: text;
+            background-clip: transparent;
+            -webkit-text-fill-color: transparent;
             cursor: pointer;
-            font-weight: 600;
-            transition: 0.3s;
+            font-weight: 700;
+            transition: var(--transition);
         }
 
         .toggle-form span:hover {
-            text-decoration: underline;
-        }
-
-        /* Ambient Blobs */
-        .blob {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            z-index: 1;
-        }
-        .blob-1 {
-            width: 300px;
-            height: 300px;
-            background: rgba(56, 189, 248, 0.2);
-            top: -100px;
-            left: -100px;
-        }
-        .blob-2 {
-            width: 400px;
-            height: 400px;
-            background: rgba(14, 165, 233, 0.15);
-            bottom: -150px;
-            right: -100px;
+            opacity: 0.8;
         }
     </style>
 </head>
 <body>
-
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
 
     <div class="login-container">
         <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back</a>
@@ -261,9 +287,9 @@
                         icon: 'success',
                         title: 'Login Berhasil!',
                         text: `Selamat datang kembali, ${user.name}!`,
-                        background: '#0f172a',
-                        color: '#f8fafc',
-                        confirmButtonColor: '#38bdf8',
+                        background: '#121212',
+                        color: '#ffffff',
+                        confirmButtonColor: '#8b5cf6',
                         timer: 2000,
                         showConfirmButton: false
                     }).then(() => {
@@ -275,9 +301,9 @@
                         icon: 'error',
                         title: 'Login Gagal',
                         text: 'Email atau password salah. Cek kembali atau bikin akun jika belum punya.',
-                        background: '#0f172a',
-                        color: '#f8fafc',
-                        confirmButtonColor: '#38bdf8'
+                        background: '#121212',
+                        color: '#ffffff',
+                        confirmButtonColor: '#8b5cf6'
                     });
                 }
             } else {
@@ -292,9 +318,9 @@
                         icon: 'warning',
                         title: 'Email Terdaftar',
                         text: 'Email ini sudah digunakan. Silakan langsung login.',
-                        background: '#0f172a',
-                        color: '#f8fafc',
-                        confirmButtonColor: '#38bdf8'
+                        background: '#121212',
+                        color: '#ffffff',
+                        confirmButtonColor: '#8b5cf6'
                     });
                     return;
                 }
@@ -307,9 +333,9 @@
                     icon: 'success',
                     title: 'Akun Berhasil Dibuat!',
                     text: 'Silakan login dengan akun baru Anda.',
-                    background: '#0f172a',
-                    color: '#f8fafc',
-                    confirmButtonColor: '#38bdf8'
+                    background: '#121212',
+                    color: '#ffffff',
+                    confirmButtonColor: '#8b5cf6'
                 }).then(() => {
                     // Balik ke mode login
                     authForm.reset();

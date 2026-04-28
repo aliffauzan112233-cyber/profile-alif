@@ -262,30 +262,33 @@ p {
 }
 
 .img-box {
-    width: 350px;
-    height: 350px;
-    border-radius: 30px;
-    padding: 10px;
-    background: linear-gradient(135deg, var(--accent-color), transparent);
-    animation: float 6s ease-in-out infinite;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    padding: 8px;
+    background: linear-gradient(135deg, var(--accent-color) 0%, rgba(56, 189, 248, 0.05) 100%);
+    box-shadow: 0 0 50px rgba(56, 189, 248, 0.15);
     position: relative;
+    animation: float 8s ease-in-out infinite;
 }
 
 .img-box::before {
     content: '';
     position: absolute;
-    inset: -15px;
-    border: 2px dashed rgba(56, 189, 248, 0.5);
-    border-radius: 40px;
-    animation: rotate 20s linear infinite;
+    inset: -30px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, transparent 70%);
+    z-index: -1;
 }
 
 .img-box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 20px;
-    filter: brightness(1.1) contrast(1.1);
+    border-radius: 50%;
+    background-color: var(--bg-secondary);
+    border: 4px solid var(--bg-main);
+    filter: brightness(1.05);
 }
 
 @keyframes float {
@@ -301,13 +304,14 @@ p {
 /* --- About Section --- */
 .about-content {
     display: flex;
-    gap: 60px;
+    gap: 80px;
     background: var(--glass-bg);
     backdrop-filter: var(--glass-effect);
     border: 1px solid var(--border-color);
     border-radius: 30px;
-    padding: 50px;
+    padding: 60px;
     margin-top: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
 .about-text {
@@ -315,14 +319,17 @@ p {
 }
 
 .about-text h3 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    margin-bottom: 25px;
     color: var(--accent-color);
+    font-weight: 700;
 }
 
 .about-text p {
-    font-size: 1.05rem;
-    margin-bottom: 30px;
+    font-size: 1.1rem;
+    margin-bottom: 35px;
+    line-height: 1.8;
+    color: #cbd5e1;
 }
 
 .skills-box {
@@ -589,8 +596,8 @@ footer {
     }
 
     .img-box {
-        width: 280px;
-        height: 280px;
+        width: 300px;
+        height: 300px;
     }
 
     .section {

@@ -1,136 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alif Fauzan | Portfolio</title>
+    <meta name="description" content="Portfolio of Alif Fauzan, a passionate Web Developer.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-    
 <body>
-
-
-
-    <div class="container">
-        <aside class="card">
-            <div class="profile-wrapper">
-                <img src="img/img5.png" alt="Alif Fauzan" class="profile" />
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">Alif<span>.</span></div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
             </div>
-            <h2>ALIF FAUZAN</h2>
-            <p class="role">Web Developer</p>
-            <p class="desc">
-                Halo! Saya seorang Web Developer yang passionate dalam menciptakan website dan aplikasi web yang modern,
-                responsif, dan mudah digunakan.
-            </p>
+        </div>
+    </nav>
 
-            <div class="contact-section">
-                <a href="https://github.com/aliffauzan112233-cyber" target="_blank" title="GitHub">
-                    <i class="fab fa-github"></i> GitHub Profile 
-                </a>
-                <a href="https://mail.google.com/mail/?view=cm&to=aliffauzan114@gmail.com&su=Halo&body=Saya%20tertarik"
-                    target="_blank" title="Email"> <i class="fas fa-envelope"></i>Email
-                </a>
-                <a href="https://wa.me/6282326793436" target="_blank" title="WhatsApp">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
-                </a>
-            </div>
-
-            <div class="skills-section">
-                <h4>Skills</h4>
-                <div class="skills-container">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JavaScript</span>
-                    <span>Git</span>
-                    <span>MySQL</span>
-                    <span>Database</span>
-
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="section home-section">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h3 class="greeting">Hello, I'm</h3>
+                    <h1 class="name">Alif Fauzan</h1>
+                    <h2 class="role">Web Developer</h2>
+                    <p class="desc">
+                        Saya bersemangat dalam menciptakan website dan aplikasi web yang modern, responsif, dan memberikan pengalaman pengguna yang luar biasa.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn primary">Lihat Project</a>
+                        <a href="#contact" class="btn outline">Hubungi Saya</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="img-box">
+                        <img src="img/img5.png" alt="Alif Fauzan">
+                    </div>
                 </div>
             </div>
+        </section>
 
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="section-title">
+                <h2>About Me</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Who am I?</h3>
+                    <p>
+                        Halo! Saya seorang Web Developer yang passionate dalam menciptakan website dan aplikasi web yang modern, responsif, dan mudah digunakan. Saya selalu antusias mempelajari teknologi baru dan menerapkannya dalam proyek-proyek saya. Saya percaya bahwa kode yang baik tidak hanya berfungsi, tetapi juga mudah dibaca dan dipelihara.
+                    </p>
+                    <a href="cv.pdf" download class="btn primary cv-btn">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                </div>
+                <div class="skills-box">
+                    <h3>My Skills</h3>
+                    <div class="skills-container">
+                        <span><i class="fab fa-html5"></i> HTML</span>
+                        <span><i class="fab fa-css3-alt"></i> CSS</span>
+                        <span><i class="fab fa-js"></i> JavaScript</span>
+                        <span><i class="fab fa-git-alt"></i> Git</span>
+                        <span><i class="fas fa-database"></i> MySQL</span>
+                        <span><i class="fas fa-server"></i> Database</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="section-title">
+                <h2>My Projects</h2>
+                <div class="underline"></div>
+            </div>
+            <p class="subtitle text-center">Berikut adalah beberapa proyek yang telah saya kerjakan.</p>
             
-        </aside>
-        
-        <main class="content">
-            <header class="content-header">
-                <div>
-                    <h1>Projects</h1>
-                    <p class="subtitle">Here is a brief summary of my projects</p>
-                </div>
-                <div class="buttons">
-                    <a href="cv.pdf" download class="btn primary">Download CV</a>
-                </div>
-            </header>
-
-            <div id="projects" class="projects-grid">
-
-                <div class="project">
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
                     <div class="project-img">
                         <img src="img/img1.png" alt="App To-Do">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://my-todos.zannbest.my.id/" target="_blank" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="https://github.com/aliffauzan112233-cyber/my-todos.git" target="_blank" title="Source Code"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
                     </div>
-                    <h4>App To-Do</h4>
-                    <p>My-Todos adalah aplikasi untuk mencatat dan mengatur tugas harian. Pengguna dapat menambah,
-                        menghapus, dan menandai tugas yang sudah selesai agar lebih terorganisir.</p>
-
-                    <div class="project-links">
-                        <a href="https://my-todos.zannbest.my.id/" target="_blank">Demo</a>
-                        <a href="https://github.com/aliffauzan112233-cyber/my-todos.git" target="_blank">Code</a>
+                    <div class="project-info">
+                        <h4>App To-Do</h4>
+                        <p>My-Todos adalah aplikasi untuk mencatat dan mengatur tugas harian. Pengguna dapat menambah, menghapus, dan menandai tugas yang sudah selesai agar lebih terorganisir.</p>
                     </div>
                 </div>
 
-                <div class="project">
+                <!-- Project 2 -->
+                <div class="project-card">
                     <div class="project-img">
                         <img src="img/img2.png" alt="Finance Tracker">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://duitku.zannbest.my.id/" target="_blank" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="https://github.com/aliffauzan112233-cyber/Financial-Tracker.git" target="_blank" title="Source Code"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
                     </div>
-                    <h4>Finance Tracker</h4>
-                    <p>Duitku adalah aplikasi untuk mencatat pemasukan dan pengeluaran harian. Pengguna dapat
-                        menambahkan data transaksi dan melihat total saldo sehingga membantu dalam mengelola keuangan.
-                    </p>
-                    <div class="project-links">
-                        <a href="https://duitku.zannbest.my.id/" target="_blank">Demo</a>
-                        <a href="https://github.com/aliffauzan112233-cyber/Financial-Tracker.git"
-                            target="_blank">Code</a>
+                    <div class="project-info">
+                        <h4>Finance Tracker</h4>
+                        <p>Duitku adalah aplikasi untuk mencatat pemasukan dan pengeluaran harian. Pengguna dapat menambahkan data transaksi dan melihat total saldo sehingga membantu dalam mengelola keuangan.</p>
                     </div>
                 </div>
 
-                <div class="project">
+                <!-- Project 3 -->
+                <div class="project-card">
                     <div class="project-img">
                         <img src="img/img3.png" alt="E-Commerce">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://tjstore.zannbest.my.id/" target="_blank" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="https://github.com/aliffauzan112233-cyber/toko-warga.git" target="_blank" title="Source Code"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
                     </div>
-                    <h4>E-Commerce</h4>
-                    <p>Website E-commerce yang saya buat digunakan untuk menampilkan produk dan melakukan simulasi
-                        pembelian. Pengguna dapat melihat daftar produk, menambahkan ke keranjang, dan melihat total
-                        harga secara otomatis.</p>
-
-                    <div class="project-links">
-                        <a href="https://tjstore.zannbest.my.id/" target="_blank">Demo</a>
-                        <a href="https://github.com/aliffauzan112233-cyber/toko-warga.git" target="_blank">Code</a>
+                    <div class="project-info">
+                        <h4>E-Commerce</h4>
+                        <p>Website E-commerce yang saya buat digunakan untuk menampilkan produk dan melakukan simulasi pembelian. Pengguna dapat melihat daftar produk, menambahkan ke keranjang, dan melihat total harga secara otomatis.</p>
                     </div>
                 </div>
 
-                <div class="project">
+                <!-- Project 4 -->
+                <div class="project-card">
                     <div class="project-img">
                         <img src="img/img4.png" alt="Kalkulator">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://tjkalkulator.zannbest.my.id/" target="_blank" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="https://github.com/aliffauzan112233-cyber/tj-kalkulator.git" target="_blank" title="Source Code"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
                     </div>
-                    <h4>Kalkulator</h4>
-                    <p>Website kalkulator ini digunakan untuk melakukan perhitungan matematika dasar seperti
-                        penjumlahan, pengurangan, perkalian, dan pembagian dengan tampilan yang sederhana dan mudah
-                        digunakan.</p>
-                    <div class="project-links">
-                        <a href="https://tjkalkulator.zannbest.my.id/" target="_blank">Demo</a>
-                        <a href="https://github.com/aliffauzan112233-cyber/tj-kalkulator.git" target="_blank">Code</a>
+                    <div class="project-info">
+                        <h4>Kalkulator</h4>
+                        <p>Website kalkulator ini digunakan untuk melakukan perhitungan matematika dasar seperti penjumlahan, pengurangan, perkalian, dan pembagian dengan tampilan yang sederhana dan mudah digunakan.</p>
                     </div>
                 </div>
-
             </div>
+        </section>
 
-            
-        </main>
-        
-    </div>
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="contact-content">
+                <p class="contact-desc">Saya selalu terbuka untuk diskusi mengenai peluang baru, kolaborasi, atau sekadar bertukar pikiran. Jangan ragu untuk menghubungi saya!</p>
+                <div class="contact-cards">
+                    <a href="https://mail.google.com/mail/?view=cm&to=aliffauzan114@gmail.com&su=Halo&body=Saya%20tertarik" target="_blank" class="contact-card">
+                        <div class="icon-box"><i class="fas fa-envelope"></i></div>
+                        <h4>Email</h4>
+                        <p>aliffauzan114@gmail.com</p>
+                    </a>
+                    <a href="https://wa.me/6282326793436" target="_blank" class="contact-card">
+                        <div class="icon-box"><i class="fab fa-whatsapp"></i></div>
+                        <h4>WhatsApp</h4>
+                        <p>+62 823-2679-3436</p>
+                    </a>
+                    <a href="https://github.com/aliffauzan112233-cyber" target="_blank" class="contact-card">
+                        <div class="icon-box"><i class="fab fa-github"></i></div>
+                        <h4>GitHub</h4>
+                        <p>aliffauzan112233-cyber</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Alif Fauzan. All rights reserved.</p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
-
 </html>

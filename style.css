@@ -104,12 +104,27 @@ p {
 }
 
 .logo {
-    font-size: 1.8rem;
-    font-weight: 800;
-    letter-spacing: -1px;
-    color: var(--text-primary);
     display: flex;
     align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(20, 184, 166, 0.1));
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    transition: var(--transition);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.logo:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent-primary);
+    box-shadow: 0 8px 20px var(--accent-glow);
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(20, 184, 166, 0.15));
 }
 
 .logo span {
@@ -118,10 +133,8 @@ p {
     -webkit-background-clip: text;
     background-clip: transparent;
     -webkit-text-fill-color: transparent;
-    font-size: 1.8rem;
-    font-weight: 400;
-    line-height: 1;
-    margin-left: 5px;
+    font-weight: 800;
+    margin-left: 2px;
 }
 
 .nav-links {

@@ -7,6 +7,7 @@
     <title>Alif Fauzan | Portfolio</title>
     <meta name="description" content="Portfolio of Alif Fauzan, a passionate Web Developer.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -20,7 +21,6 @@
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
-                <li><a href="login.html" class="nav-link login-btn">Login</a></li>
             </ul>
             <div class="menu-btn">
                 <i class="fas fa-bars"></i>
@@ -31,11 +31,12 @@
     <main>
         <!-- Home Section -->
         <section id="home" class="section home-section">
+            <div id="particles-js"></div>
             <div class="hero-content">
-                <div class="hero-text">
+                <div class="hero-text" data-aos="fade-right" data-aos-duration="1000">
                     <h3 class="greeting">Hello, I'm</h3>
                     <h1 class="name">Alif Fauzan</h1>
-                    <h2 class="role">Web Developer</h2>
+                    <h2 class="role">I'm a <span class="typing"></span></h2>
                     <p class="desc">
                         Saya bersemangat dalam menciptakan website dan aplikasi web yang modern, responsif, dan
                         memberikan pengalaman pengguna yang luar biasa.
@@ -45,7 +46,7 @@
                         <a href="#contact" class="btn outline">Hubungi Saya</a>
                     </div>
                 </div>
-                <div class="hero-image">
+                <div class="hero-image" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
                     <div class="img-box">
                         <img src="img/img5.png" alt="Alif Fauzan">
                     </div>
@@ -55,11 +56,11 @@
 
         <!-- About Section -->
         <section id="about" class="section">
-            <div class="section-title">
+            <div class="section-title" data-aos="fade-up">
                 <h2>About Me</h2>
                 <div class="underline"></div>
             </div>
-            <div class="about-content">
+            <div class="about-content" data-aos="fade-up" data-aos-delay="200">
                 <div class="about-text">
                     <h3>Who am I?</h3>
                     <p>
@@ -88,15 +89,15 @@
 
         <!-- Projects Section -->
         <section id="projects" class="section">
-            <div class="section-title">
+            <div class="section-title" data-aos="fade-up">
                 <h2>My Projects</h2>
                 <div class="underline"></div>
             </div>
-            <p class="subtitle text-center">Berikut adalah beberapa proyek yang telah saya kerjakan.</p>
+            <p class="subtitle text-center" data-aos="fade-up" data-aos-delay="100">Berikut adalah beberapa proyek yang telah saya kerjakan.</p>
 
             <div class="projects-grid">
                 <!-- Project 1 -->
-                <div class="project-card">
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="project-img">
                         <img src="img/img1.png" alt="App To-Do">
                         <div class="project-overlay">
@@ -116,7 +117,7 @@
                 </div>
 
                 <!-- Project 2 -->
-                <div class="project-card">
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="project-img">
                         <img src="img/img2.png" alt="Finance Tracker">
                         <div class="project-overlay">
@@ -137,7 +138,7 @@
                 </div>
 
                 <!-- Project 3 -->
-                <div class="project-card">
+                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="project-img">
                         <img src="img/img3.png" alt="E-Commerce">
                         <div class="project-overlay">
@@ -158,7 +159,7 @@
                 </div>
 
                 <!-- Project 4 -->
-                <div class="project-card">
+                <div class="project-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="project-img">
                         <img src="img/img4.png" alt="Kalkulator">
                         <div class="project-overlay">
@@ -182,26 +183,26 @@
 
         <!-- Contact Section -->
         <section id="contact" class="section">
-            <div class="section-title">
+            <div class="section-title" data-aos="fade-up">
                 <h2>Get In Touch</h2>
                 <div class="underline"></div>
             </div>
             <div class="contact-content">
-                <p class="contact-desc">Saya selalu terbuka untuk diskusi mengenai peluang baru, kolaborasi, atau
+                <p class="contact-desc" data-aos="fade-up" data-aos-delay="100">Saya selalu terbuka untuk diskusi mengenai peluang baru, kolaborasi, atau
                     sekadar bertukar pikiran. Jangan ragu untuk menghubungi saya!</p>
                 <div class="contact-cards">
                     <a href="https://mail.google.com/mail/?view=cm&to=aliffauzan114@gmail.com&su=Halo&body=Saya%20tertarik"
-                        target="_blank" class="contact-card">
+                        target="_blank" class="contact-card" data-aos="zoom-in" data-aos-delay="200">
                         <div class="icon-box"><i class="fas fa-envelope"></i></div>
                         <h4>Email</h4>
                         <p>aliffauzan114@gmail.com</p>
                     </a>
-                    <a href="https://wa.me/6282326793436" target="_blank" class="contact-card">
+                    <a href="https://wa.me/6282326793436" target="_blank" class="contact-card" data-aos="zoom-in" data-aos-delay="300">
                         <div class="icon-box"><i class="fab fa-whatsapp"></i></div>
                         <h4>WhatsApp</h4>
                         <p>+62 823-2679-3436</p>
                     </a>
-                    <a href="https://github.com/aliffauzan112233-cyber" target="_blank" class="contact-card">
+                    <a href="https://github.com/aliffauzan112233-cyber" target="_blank" class="contact-card" data-aos="zoom-in" data-aos-delay="400">
                         <div class="icon-box"><i class="fab fa-github"></i></div>
                         <h4>GitHub</h4>
                         <p>aliffauzan112233-cyber</p>
@@ -215,6 +216,10 @@
         <p>&copy; 2026 Alif Fauzan. All rights reserved.</p>
     </footer>
 
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
 </body>
 

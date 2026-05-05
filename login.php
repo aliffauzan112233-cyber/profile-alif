@@ -217,22 +217,17 @@
             <p id="form-subtitle">Silakan login ke akun Anda.</p>
         </div>
 
-        <form id="auth-form">
-            <div class="form-group" id="name-group" style="display: none;">
-                <i class="fas fa-user"></i>
-                <input type="text" id="name" class="form-control" placeholder="Nama Lengkap">
-            </div>
-            <div class="form-group">
-                <i class="fas fa-envelope"></i>
-                <input type="email" id="email" class="form-control" placeholder="Email Address" required>
-            </div>
-            <div class="form-group">
-                <i class="fas fa-lock"></i>
-                <input type="password" id="password" class="form-control" placeholder="Password" required>
-            </div>
-            <button type="submit" class="btn-submit" id="submit-btn">Login</button>
-        </form>
-
+       <form action="proses_login.php" method="POST">
+    <div class="form-group">
+        <i class="fas fa-envelope"></i>
+        <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+    </div>
+    <div class="form-group">
+        <i class="fas fa-lock"></i>
+        <input type="password" name="password" class="form-control" placeholder="Password" required>
+    </div>
+    <button type="submit" class="btn-submit">Login</button>
+</form>
         <div class="toggle-form">
             <p id="toggle-text">Belum punya akun? <span onclick="toggleMode()">Bikin Akun</span></p>
         </div>

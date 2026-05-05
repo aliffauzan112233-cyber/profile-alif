@@ -12,6 +12,14 @@
 </head>
 
 <body>
+
+<?php
+session_start();
+if (!isset($_SESSION['admin'])) {
+    header("Location: login.php");
+    exit;
+}
+?>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-content">
@@ -21,6 +29,8 @@
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="login.php" class="nav-link login-btn">Login</a></li>
+                <li><a href="logout.php" class="nav-link login-btn">Logout</a></li>
             </ul>
             <div class="menu-btn">
                 <i class="fas fa-bars"></i>
